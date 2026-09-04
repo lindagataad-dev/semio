@@ -34,7 +34,7 @@ st.markdown("""
         margin-bottom: 10px;
     }
     </style>
-""", unsafe_allowed_html=True)
+""", unsafe_allow_html=True)
 
 # Inicialização de variáveis de sessão caso não existam
 if 'etapa' not in st.session_state:
