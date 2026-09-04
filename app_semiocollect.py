@@ -1,6 +1,26 @@
 import streamlit as st
 import pandas as pd
 
+sistemas = {
+    'rev_pele': "1. Pele e Anexos (cor, umidade, prurido, pelos, unhas)",
+    'rev_cabeca': "2. Cabeça (cefaleia, tontura, síncope, lipotimia)",
+    'rev_olhos': "3. Olhos (acuidade, diplopia, dor, vermelhidão)",
+    'rev_ouvido': "4. Ouvido (acuidade, otalgia, zumbidos)",
+    'rev_nariz': "5. Nariz (olfato, epistaxe, coriza, obstrução)",
+    'rev_boca': "6. Boca e Garganta (dentes, gengivorragia, rouquidão, halitose)",
+    'rev_mama': "7. Mamas (nódulos, mastalgia, secreção)",
+    'rev_resp': "8. Aparelho Respiratório (tosse, escarro, dispneia, chieira)",
+    'rev_circ': "9. Aparelho Circulatório (dor precordial, palpitações, ortopneia, edema)",
+    'rev_digest': "10. Aparelho Digestório (disfagia, pirose, dor abdominal, hábito intestinal)",
+    'rev_urinario': "11. Aparelho Urinário (disúria, alteração de cor, nictúria, dor lombar)",
+    'rev_gen_masc': "12. Aparelho Genital Masculino (lesões, libido, testículos)",
+    'rev_gen_fem': "13. Aparelho Genital Feminino (menarca, ciclo, DUM, corrimento)",
+    'rev_musc': "14. Aparelho Locomotor (dor articular, rigidez matinal, fraqueza)",
+    'rev_linfatico': "15. Sistema Hemolinfopoético (palidez, sangramentos, ínguas)",
+    'rev_endocrino': "16. Sistema Endócrino/Metabólico (polidipsia, polifagia, intolerância térmica)",
+    'rev_neuro': "17. Sistema Neuropsíquico (linguagem, parestesias, humor, memória)"
+}
+
 # Configuração da página do Streamlit
 st.set_page_config(
     page_title="SemioCollect - Aplicativo de Apoio à Anamnese",
@@ -396,25 +416,7 @@ elif st.session_state.etapa == 4:
     st.header("4. Revisão dos Sistemas / Interrogatório Sintomatológico")
     st.caption("Pergunte ativamente por sintomas ocultados ou não relacionados à Q.P. em cada um dos 17 subsistemas.")
     
-    sistemas = {
-        'rev_pele': "1. Pele e Anexos (cor, umidade, prurido, pelos, unhas)",
-        'rev_cabeca': "2. Cabeça (cefaleia, tontura, síncope, lipotimia)",
-        'rev_olhos': "3. Olhos (acuidade, diplopia, dor, vermelhidão)",
-        'rev_ouvido': "4. Ouvido (acuidade, otalgia, zumbidos)",
-        'rev_nariz': "5. Nariz (olfato, epistaxe, coriza, obstrução)",
-        'rev_boca': "6. Boca e Garganta (dentes, gengivorragia, rouquidão, halitose)",
-        'rev_mama': "7. Mamas (nódulos, mastalgia, secreção)",
-        'rev_resp': "8. Aparelho Respiratório (tosse, escarro, dispneia, chieira)",
-        'rev_circ': "9. Aparelho Circulatório (dor precordial, palpitações, ortopneia, edema)",
-        'rev_digest': "10. Aparelho Digestório (disfagia, pirose, dor abdominal, hábito intestinal)",
-        'rev_urinario': "11. Aparelho Urinário (disúria, alteração de cor, nictúria, dor lombar)",
-        'rev_gen_masc': "12. Aparelho Genital Masculino (lesões, libido, testículos)",
-        'rev_gen_fem': "13. Aparelho Genital Feminino (menarca, ciclo, DUM, corrimento)",
-        'rev_musc': "14. Aparelho Locomotor (dor articular, rigidez matinal, fraqueza)",
-        'rev_linfatico': "15. Sistema Hemolinfopoético (palidez, sangramentos, ínguas)",
-        'rev_endocrino': "16. Sistema Endócrino/Metabólico (polidipsia, polifagia, intolerância térmica)",
-        'rev_neuro': "17. Sistema Neuropsíquico (linguagem, parestesias, humor, memória)"
-    }
+    # 'sistemas' is defined globally at the top of the file
     
     for chave, label in sistemas.items():
         with st.container(border=True):
